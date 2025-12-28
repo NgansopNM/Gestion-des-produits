@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ADDProduct from "./Components/ADDProduct";
+import Todo from "./Components/To-do.jsx";
 import ModificationProduit from "./Components/ModificationProduit";
 
 export default function App() {
@@ -8,11 +9,10 @@ export default function App() {
   const [error, setError] = useState(null);
   const [showAddForm, setShowAddForm] = useState(false);
 
-  // NEW: état pour afficher le formulaire d'édition
   const [editProduct, setEditProduct] = useState(null);
   const [showEditForm, setShowEditForm] = useState(false);
 
-  // Fetch des produits depuis l'API
+  
   useEffect(() => {
     const controller = new AbortController();
     let mounted = true;
@@ -130,9 +130,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gray-900 p-4">
-      <h1 className="bg-gray-500 text-violet-600 font-bold w-52 h-52 text-center flex justify-center items-center text-5xl rounded-full absolute top-0 left-0 m-4">
-        Hello worlds
-      </h1>
+     
 
       <div className="max-w-3xl mx-auto mt-6">
         {/* Formulaire d'ajout (affiché seulement quand showAddForm) */}
@@ -219,6 +217,9 @@ export default function App() {
             </div>
           </>
         )}
+      </div>
+      <div className="mt-24">
+      <Todo/>
       </div>
     </div>
   );

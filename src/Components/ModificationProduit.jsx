@@ -84,7 +84,7 @@ export default function ModificationProduit({ product, onSaved, onCancel } = {})
 
 			<div className="flex gap-2">
 				<button type="submit" disabled={loading} className="px-4 py-2 bg-green-600 rounded text-white">
-					{loading ? "Sauvegarde..." : "Sauver"}
+					{loading ? "Sauvegarde..." : "Enregistrer"}
 				</button>
 				<button type="button" onClick={() => typeof onCancel === "function" && onCancel()} className="px-4 py-2 bg-white/10 rounded text-white">
 					Annuler
